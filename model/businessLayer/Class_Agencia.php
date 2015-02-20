@@ -1,7 +1,7 @@
 <?php
-include_once($_SERVER['DOCUMENT_ROOT']."/proyecto/model/DAO/Class_Actordb.php");
-include_once($_SERVER['DOCUMENT_ROOT']."/proyecto/model/DAO/Class_Obradb.php");
-include_once($_SERVER['DOCUMENT_ROOT']."/proyecto/model/DAO/Class_Agenciadb.php");
+include_once($_SERVER['DOCUMENT_ROOT']."/clase/ProyectoM7PHP/model/DAO/Class_Actordb.php");
+include_once($_SERVER['DOCUMENT_ROOT']."/clase/ProyectoM7PHP/model/DAO/Class_Obradb.php");
+include_once($_SERVER['DOCUMENT_ROOT']."/clase/ProyectoM7PHP/model/DAO/Class_Agenciadb.php");
 class Agencia{
 
 	private $nombre;

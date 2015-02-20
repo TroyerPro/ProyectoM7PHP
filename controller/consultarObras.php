@@ -8,7 +8,7 @@ $agencia = unserialize($_SESSION['agencia']);
 	$totes=$agencia->getArrayObras();
 	$cont = 0;
 	while($cont < count($totes)){ 
-		?><?php include($_SERVER['DOCUMENT_ROOT']."/proyecto/view/mostrarObras.php"); ?><?php
+		?><?php include($_SERVER['DOCUMENT_ROOT']."/clase/ProyectoM7PHP/view/mostrarObras.php"); ?><?php
 		$cont++;
 	}			
 ?>
