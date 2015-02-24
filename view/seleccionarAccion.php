@@ -25,14 +25,7 @@ if(cualquierUser(($_SESSION['user']),$_SESSION['password'])) { ?>
 
     <div class="container-fluid">
       <div class="row row-offcanvas row-offcanvas-left">
-        <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
-          <div data-spy="affix" data-offset-top="45" data-offset-bottom="90">
-            <ul class="nav" id="sidebar-nav">
-              <li><a href="seleccionarAccion.php">Home</a></li>
-
-            </ul>
-           </div>
-        </div>
+      <?php include "menu_lateral.php" ?>
         <!-- -->
                 <div class="col-xs-12 col-sm-9" data-spy="scroll" data-target="#sidebar-nav">
                 <div class="row"><div class="col-sm-6"><div class="panel panel-default"><div class="panel-body">
