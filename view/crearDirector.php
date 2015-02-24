@@ -1,6 +1,6 @@
 <?php
 include "../controller/addBoostrap.php";
-include "../controller/consultarGeneros.php";
+
 include "../controller/validaciones/session/valSession.php";
 session_start();
 

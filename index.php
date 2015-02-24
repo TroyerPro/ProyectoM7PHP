@@ -1,10 +1,7 @@
 <?php
 session_start();
-include "controller/validaciones/session/valSession.php";
-function __autoload($class_name) {
-    require_once "model/businessLayer/Class_".$class_name.".php";
-}
- 
+require_once "controller/validaciones/session/valSession.php";
+
 	if(!isset($_SESSION['agencia'])){
 		$agencia = new Agencia("Pokelab","C/ Vallbona n127","93 014 014");
 		$_SESSION['agencia']=serialize($agencia);

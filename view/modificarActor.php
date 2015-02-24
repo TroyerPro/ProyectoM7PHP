@@ -1,7 +1,6 @@
 <?php
 session_start();
-include "../controller/validaciones/session/valSession.php";
-include "../controller/addBoostrap.php";
+
 if(cualquierUser(($_SESSION['user']),$_SESSION['password'])) { ?>
 <form action="../controller/modificarActor.php" method="post">
 	<div name="arribaForm">

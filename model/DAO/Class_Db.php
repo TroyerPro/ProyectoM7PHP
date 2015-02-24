@@ -1,7 +1,7 @@
 <?php
 require_once("bdcfg.php");
 require_once("Interface_db.php");
-include_once($_SERVER['DOCUMENT_ROOT']."/clase/ProyectoM7PHP/model/businessLayer/Class_Obra.php");
+require_once ("../model/businessLayer/Class_Obra.php");
 class Db implements interface_db{
 
 	private $server;

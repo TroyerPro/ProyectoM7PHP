@@ -1,8 +1,6 @@
 <?php
 session_start();
-function __autoload($class_name) {
-    require_once "../model/businessLayer/Class_".$class_name.".php";
-}
+
 $datosDirector;
 $datosDirector[0] = $_REQUEST['nif'];
 $datosDirector[1] = $_REQUEST['nombre'];

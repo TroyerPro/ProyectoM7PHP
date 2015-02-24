@@ -1,6 +1,6 @@
 <?php
 session_start();
-include "../controller/validaciones/session/valSession.php";
+require_once  "../controller/validaciones/session/valSession.php";
 if (isset($_SESSION['user']) && isset($_SESSION['password'])) {
 	header("Location: ../index.php");
 }

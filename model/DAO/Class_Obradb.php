@@ -1,6 +1,6 @@
 <?php
 
-require_once("Class_Db.php");
+include ("Class_Db.php");
 require_once("bdcfg.php");
 
 class ObraDb {

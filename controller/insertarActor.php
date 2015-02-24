@@ -1,8 +1,7 @@
 <?php
 session_start();
-function __autoload($class_name) {
-    require_once "../model/businessLayer/Class_".$class_name.".php";
-}
+require_once  "../model/businessLayer/Class_Agencia.php";
+
 $datosActor;
 $datosActor[0] = $_REQUEST['nif'];
 $datosActor[1] = $_REQUEST['nombre'];

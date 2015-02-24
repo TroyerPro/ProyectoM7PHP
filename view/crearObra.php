@@ -1,8 +1,8 @@
 <?php
 session_start();
-include "../controller/addBoostrap.php";
-include "../controller/consultarGeneros.php";
-include "../controller/validaciones/session/valSession.php";
+require_once "../controller/addBoostrap.php";
+require_once "../controller/consultarGeneros.php";
+require_once "../controller/validaciones/session/valSession.php";
 
 
 if(cualquierUser($_SESSION['user'],$_SESSION['password'])) {
