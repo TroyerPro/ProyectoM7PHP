@@ -44,7 +44,7 @@ if(cualquierUser(($_SESSION['user']),$_SESSION['password'])) { ?>
 						<option value="../view/crearDirector.php">Crear Director</option>
 						<option value="mostrarDirector.php">Mostrar Director</option>
 						<option value="consultarObras.php">Mostrar TODAS las obras</option>
-						<option value="mostrarPersonas.php">Mostrar TODAS las personas</option>
+						<option value="consultarActor.php">Mostrar Actores</option>
 					</select>
 					<button type="submit" class="btn btn-default"> GO GO GO
 					</button>

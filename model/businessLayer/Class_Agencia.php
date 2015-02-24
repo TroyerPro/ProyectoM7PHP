@@ -79,6 +79,13 @@ class Agencia{
 
 	}
 
+
+	public function getArrayActores() {
+		$agenciaDb = new Agenciadb();
+		$arrayActores = $agenciaDb->getActores();
+		return $arrayActores;
+	}
+
 	public function getArrayObras() {
 		$agenciaDb = new Agenciadb();
 		$arrayObras = $agenciaDb->getObras();

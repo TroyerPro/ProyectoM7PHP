@@ -8,7 +8,6 @@ require_once "../controller/validaciones/session/valSession.php";
 if(cualquierUser($_SESSION['user'],$_SESSION['password'])) {
 ?>
 
-
 	<body>
 	<body style=" background: none repeat scroll 0 0 #1e1e1e;">
 	<div class="page-container">

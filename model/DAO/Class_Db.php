@@ -2,6 +2,7 @@
 require_once("bdcfg.php");
 require_once("Interface_db.php");
 require_once ("../model/businessLayer/Class_Obra.php");
+require_once ("../model/businessLayer/Class_Actor.php");
 class Db implements interface_db{
 
 	private $server;
@@ -93,6 +94,20 @@ class Db implements interface_db{
 		//print_r($arrayLlibres);
 		return $arrayLlibres;
 	}	
+
+
+	public function consultarActores($query, $pBD){		
+		$con= $this->connect();
+		$this->bd($pBD);
+		$consulta = mysql_query($query, $con) or die('Error, query failed: '.$this->error());
+		$cont = 0;
+		while ($row=mysql_fetch_array($consulta)) {		
+			$arrayLlibres[$cont] = new Actor ($row["DNI"],$row["nombre"],$row["apellidos"],$row["img"],$row["principal"]);
+			$cont++;			
+		}
+		//print_r($arrayLlibres);
+		return $arrayLlibres;
+	}
 }
     
 ?>

@@ -8,7 +8,7 @@ class Agenciadb {
 	public function getActores() {		
 		$query="SELECT * FROM actor";				
 		$con = new Db();
-		$result = $con->consulta($query, $GLOBALS['bd']);
+		$result = $con->consultarActores($query, $GLOBALS['bd']);
 		$con->close();
 		return $result;
 	} 

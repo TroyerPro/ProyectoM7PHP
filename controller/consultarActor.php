@@ -1,10 +1,13 @@
-<?php
-//Consultas MYSQL
-$actorDatos="DatosBuscadosEnBBDD";
-$NIF_actor = $_POST['nif'];
+<?php 
 
-foreach ($actor as $key => $value) {
-	# code...
-}
-echo ("Datos del Actor con el NIF: ".$NIF_actor."<br/>".$actorDatos);
+session_start();
+
+require_once  "../model/businessLayer/Class_Agencia.php";
+$agencia = unserialize($_SESSION['agencia']);
+	$totes=$agencia->getArrayActores();
+	$cont = 0;
+	while($cont < count($totes)){ 
+		?><?php include("../view/mostrarActores.php"); ?><?php
+		$cont++;
+	}			
 ?>
