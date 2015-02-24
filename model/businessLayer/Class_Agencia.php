@@ -1,9 +1,9 @@
 <?php
 require_once  "Class_Obra.php";
 require_once  "Class_Actor.php";
-require_once  "../model/DAO/Class_Obradb.php";
-require_once  "../model/DAO/Class_Agenciadb.php";
-require_once  "../model/DAO/Class_Actordb.php";
+include  "../model/DAO/Class_Obradb.php";
+include  "../model/DAO/Class_Agenciadb.php";
+include  "../model/DAO/Class_Actordb.php";
 class Agencia{
 
 	private $nombre;

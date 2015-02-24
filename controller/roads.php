@@ -1,7 +1,5 @@
 <?php
 
-		$opcion = $_REQUEST['opcion'];
-
-header ("Location: $opcion")
+header ("Location: ".$_REQUEST['opcion']);
 
 ?>

@@ -1,9 +1,20 @@
 <?php
 session_start();
+require_once "../model/businessLayer/Class_Agencia.php";
 include "../controller/validaciones/session/valSession.php";
 include "../controller/addBoostrap.php";
+
+if(!isset($_SESSION['agencia'])){
+		$agencia = new Agencia("Pokelab","C/ Vallbona n127","93 014 014");
+		$_SESSION['agencia']=serialize($agencia);
+		$agencia->populateAgencia();
+
+}else {
+		$agencia = unserialize($_SESSION['agencia']);	
+}
+
 if (isset($_SESSION['user']) && isset($_SESSION['password'])) {
-	header("Location: ../index.php");
+	header("Location: seleccionarAccion.php");
 }
 $userC = "";
 $passC = "";
@@ -50,12 +61,14 @@ if (isset($_REQUEST['user']) && isset($_REQUEST['password'])) {
 		}
 		$_SESSION['user'] = $_REQUEST['user'];
 		$_SESSION['password'] = $_REQUEST['password'];
-		header("Location: ../index.php");
+		header("Location: seleccionarAccion.php");
 	} else {
 		session_unset();
 		header("login.php");
 	}
 }
+
+
 ?>
 
 <html>
