@@ -39,10 +39,11 @@ if(cualquierUser(($_SESSION['user']),$_SESSION['password'])) { ?>
 						<option value="../view/crearObra.php"> Crear una obra nueva. </option>
 						<option value="../view/modificarActor.php"> Modificar actor </option>
 						<?php } ?>
-						<option value="../view/consultarActor.php">Consultar actor. </option>
+						<!--<option value="../view/consultarActor.php">Consultar actor. </option>-->
 						<option value="../view/crearActor.php">Crear Actor</option>
 						<option value="../view/crearDirector.php">Crear Director</option>
-						<option value="mostrarDirector.php">Mostrar Director</option>
+						<!--<option value="mostrarDirector.php">Mostrar Director</option>-->
+						<option value="../view/verObra.php">Ver obra</option>
 						<option value="consultarObras.php">Mostrar TODAS las obras</option>
 						<option value="consultarActor.php">Mostrar Actores</option>
 					</select>

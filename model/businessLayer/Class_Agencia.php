@@ -46,7 +46,16 @@ class Agencia{
 		$this->telefono = $telefono;
 	}
 
-	public function getObra(){
+	public function getObra($idObra){
+		foreach ($this->obra as $item) {
+			if($item->getIDobra() == $idObra) {
+				return  $item;
+			}
+		}
+
+	}
+
+	public function getObras(){
 		return $this->obra;
 	}
 
@@ -54,7 +63,7 @@ class Agencia{
 		return $this->actor;
 	}
 
-	public function setObra($obra){
+	public function setObras($obra){
 		return $this->obra = $obra;
 	}
 
@@ -74,7 +83,7 @@ class Agencia{
 		
 			$agencia = unserialize($_SESSION['agencia']);
 			$totes=$agencia->getArrayObras();
-			$agencia->setObra($totes);
+			$agencia->setObras($totes);
 			$_SESSION['agencia']=serialize($agencia);
 
 	}
@@ -112,10 +121,10 @@ class Agencia{
 	}
 
 	public function insertarObra( $nombre, $genero, $fechaI,$fechaF, $actP,$actS,$director) {
-		$obra = new Obra( $nombre, $genero, $fechaI,$fechaF, $actP,$actS,$director);
+		$obra = new Obra($nombre, $genero, $fechaI,$fechaF, $actP,$actS,$director);
 		$obradb = new Obradb();
 		$obradb->inserir($obra);
-
+		array_push($this->obra, $obra);
 	}
 }
 
