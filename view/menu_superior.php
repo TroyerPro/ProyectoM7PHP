@@ -6,5 +6,6 @@
              <span class="icon-bar"></span>
            </button>
            <a class="navbar-brand" href="#">Proyecto PHP</a>
+   
     	</div>
     </nav>
