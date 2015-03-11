@@ -12,6 +12,7 @@ class Agencia{
 	private $obra;
 	private $actor;
 	private $director;
+	private $users;
 
 	public function __construct($nombre, $direccion,$telefono) {
 		$this->nombre=$nombre;
@@ -20,6 +21,7 @@ class Agencia{
 		$this->obra = array();
 		$this->actor = array();
 		$this->director = array();
+		$this->users = array();
 	}
 	
 	public function getNombre(){
@@ -30,6 +32,13 @@ class Agencia{
 		$this->nombre = $nombre;
 	}
 
+	public function getUsers(){
+		return $this->users;
+	}
+
+	public function setUsers($users){
+		$this->users = $users;
+	}
 	public function getDireccion(){
 		return $this->direccion;
 	}
@@ -71,7 +80,7 @@ class Agencia{
 		return $this->actor=$actor;
 	}
 
-		public function getDirector(){
+	public function getDirector(){
 		return $this->director;
 	}
 

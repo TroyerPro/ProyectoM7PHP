@@ -1,7 +1,7 @@
 <?php
 session_start();
-
-if(cualquierUser(($_SESSION['user']),$_SESSION['password'])) { ?>
+include "../controller/validaciones/session/valSession.php";
+?>
 <form action="../controller/modificarActor.php" method="post">
 	<div name="arribaForm">
 		Introduce los datos del actor
@@ -15,8 +15,5 @@ if(cualquierUser(($_SESSION['user']),$_SESSION['password'])) { ?>
 
 <?php
 include "../view/logout.php";
-} else {
-	header("Location:login.php");
-	}
 ?>
 <a href="../index.php">Inicio</a>

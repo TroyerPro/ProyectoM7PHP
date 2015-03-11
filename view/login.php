@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once "../model/businessLayer/Class_Agencia.php";
-include "../controller/validaciones/session/valSession.php";
+require_once "../model/businessLayer/Class_User.php";
 include "../controller/addBoostrap.php";
 
 if(!isset($_SESSION['agencia'])){
@@ -13,7 +13,7 @@ if(!isset($_SESSION['agencia'])){
 		$agencia = unserialize($_SESSION['agencia']);	
 }
 
-if (isset($_SESSION['user']) && isset($_SESSION['password'])) {
+if (isset($_SESSION['user'])) {
 	header("Location: seleccionarAccion.php");
 }
 $userC = "";
@@ -28,24 +28,25 @@ if (isset($_COOKIE['pass'])) {
 }
 
 if (isset($_COOKIE["user"]) && isset($_COOKIE["pass"])) {
-	$correcto = valAdmin(($_COOKIE["user"]), $_COOKIE["pass"]);
+	$userLogin = new Usuario(($_COOKIE["user"]), $_COOKIE["pass"]);
+	$correcto = $userLogin->validarUser();
+	//$correcto = valAdmin(($_COOKIE["user"]), $_COOKIE["pass"]);
 	if ($correcto) {
-		$_SESSION['user'] = $_COOKIE['user'];
-		$_SESSION['password'] = $_COOKIE['pass'];
+		$_SESSION['user'] = $userLogin;
 	}
 }
 
 if (isset($_REQUEST['user']) && isset($_REQUEST['password'])) {
+	$userLogin = new Usuario($_REQUEST['user'], $_REQUEST['password']);
+	$correcto = $userLogin->validarUser();
 
-	$correcto = valAdmin($_REQUEST['user'], $_REQUEST['password']);
-	if (!$correcto) {
-		$correcto = valSecretario($_REQUEST['user'], $_REQUEST['password']);
-	}
+	//$correcto = valAdmin($_REQUEST['user'], $_REQUEST['password']);
+
 
 	if ($correcto) {
 
 		if (isset($_REQUEST['usersave'])) {
-			setcookie("user", $_REQUEST['user'], time() + 360);
+			setcookie("user", $userLogin, time() + 360);
 		} else {
 			if (isset($_COOKIE['user'])) {
 				setcookie("user", "", time() - 360);
@@ -59,11 +60,11 @@ if (isset($_REQUEST['user']) && isset($_REQUEST['password'])) {
 				setcookie("pass", "", time() - 360);
 			}
 		}
-		$_SESSION['user'] = $_REQUEST['user'];
-		$_SESSION['password'] = $_REQUEST['password'];
+		$_SESSION['user'] = serialize($userLogin);
 		header("Location: seleccionarAccion.php");
 	} else {
 		session_unset();
+		?><script type="text/javascript"> alert("Usuario o contraseña erróneo");</script><?php
 		header("login.php");
 	}
 }
@@ -72,7 +73,9 @@ if (isset($_REQUEST['user']) && isset($_REQUEST['password'])) {
 ?>
 
 <html>
-	<body>
+	<head>
+	<meta charset="UTF-8">
+	</head>
 	<body style=" background: none repeat scroll 0 0 #1e1e1e;">
 	<div class="page-container">
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">

@@ -1,9 +1,7 @@
 <?php
 session_start();
-
 include "../controller/validaciones/session/valSession.php";
 include "../controller/addBoostrap.php";
-if(cualquierUser(($_SESSION['user']),$_SESSION['password'])) {
 ?>
 <form action="../controller/verObra.php" method="post">
 	<div name="arribaForm">
@@ -18,8 +16,6 @@ if(cualquierUser(($_SESSION['user']),$_SESSION['password'])) {
 
 <?php
 include "../view/logout.php";
-} else {
-	header("Location:login.php");
-}
+
 ?>
 <a href="../index.php">Inicio</a>

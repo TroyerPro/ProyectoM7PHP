@@ -4,6 +4,11 @@ include "../controller/consultarGeneros.php";
 include "../controller/validaciones/session/valSession.php";
 session_start();
 
+if(!isset($_SESSION['user'])) {
+	header("Location:../index.php");
+} 
+
+
 if(cualquierUser($_SESSION['user'],$_SESSION['password'])) {
 ?>
 

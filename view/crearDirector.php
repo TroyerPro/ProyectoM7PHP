@@ -3,8 +3,6 @@ include "../controller/addBoostrap.php";
 
 include "../controller/validaciones/session/valSession.php";
 session_start();
-
-if(cualquierUser($_SESSION['user'],$_SESSION['password'])) {
 ?>
 
 <div class="col-xs-8 col-xs-offset-2">
@@ -27,11 +25,6 @@ if(cualquierUser($_SESSION['user'],$_SESSION['password'])) {
 
 <?php
 include "../view/logout.php";
- } else {
-	//header("Location:login.php");
-	echo "error";
-	}
-
 ?>
 
 <a href="../index.php">Inicio</a>

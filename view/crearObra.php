@@ -2,10 +2,10 @@
 session_start();
 require_once "../controller/addBoostrap.php";
 require_once "../controller/consultarGeneros.php";
-require_once "../controller/validaciones/session/valSession.php";
 
 
-if(cualquierUser($_SESSION['user'],$_SESSION['password'])) {
+include "../controller/validaciones/session/valSession.php";
+
 ?>
 
 	<body>
@@ -59,11 +59,6 @@ if(cualquierUser($_SESSION['user'],$_SESSION['password'])) {
 
 <?php
 include "../view/logout.php";
- } else {
-	//header("Location:login.php");
-	echo "error";
-	}
-
 ?>
 				
 				</div></div></div></div>

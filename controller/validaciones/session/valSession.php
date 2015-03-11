@@ -1,29 +1,14 @@
 <?php
-function valAdmin($user, $password) {
-	if ($user == "admin" && $password == "123") {
-		return true;
-	} else {
-		return false;
-	}
-}
+require_once "../model/businessLayer/Class_User.php";
 
-function valSecretario($user, $password) {
-	if ($user == "secre" && $password == "123") {
-		return true;
-	} else {
-		return false;
-	}
-}
+if(!isset($_SESSION['user'])) {
+	header("Location:../index.php");
+} 
 
-function cualquierUser($user,$password) {
-	
-	if(valAdmin($user,$password)) {
-		return true;
-	}
-	if(valSecretario($user,$password)) {
-		return true;
-	}
-	
-	return false;
-}
+$userLogged=unserialize($_SESSION['user']);
+
+if(!$userLogged->validarUser()) {
+	header("Location:../index.php");
+} 
+
 ?>

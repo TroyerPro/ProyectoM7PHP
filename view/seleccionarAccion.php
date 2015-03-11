@@ -1,11 +1,11 @@
 <?php
 session_start();
-require_once "../controller/validaciones/session/valSession.php";
+
 require_once "../model/businessLayer/Class_Agencia.php";
+require_once "../model/businessLayer/Class_User.php";
 require_once "../controller/addBoostrap.php";
-
-
-if(cualquierUser(($_SESSION['user']),$_SESSION['password'])) { ?>
+include "../controller/validaciones/session/valSession.php";
+?>
 <html>
 	<head>
 	<meta charset="UTF-8">
@@ -34,11 +34,8 @@ if(cualquierUser(($_SESSION['user']),$_SESSION['password'])) { ?>
                  <div class="panel-heading"><a href="#" class="pull-right">View all</a> <h4>Selecciona una acción</h4></div>
 					<br/>
 					<select name="opcion" class="btn btn-default dropdown-toggle">
-						<?php if(valAdmin(($_SESSION['user']), $_SESSION['password'])) {
-						?>
 						<option value="../view/crearObra.php"> Crear una obra nueva. </option>
 						<option value="../view/modificarActor.php"> Modificar actor </option>
-						<?php } ?>
 						<!--<option value="../view/consultarActor.php">Consultar actor. </option>-->
 						<option value="../view/crearActor.php">Crear Actor</option>
 						<option value="../view/crearDirector.php">Crear Director</option>
@@ -61,8 +58,6 @@ if(cualquierUser(($_SESSION['user']),$_SESSION['password'])) { ?>
 	</div></div>
 	</body>
 </html>
-<?php } else {
-	header("Location:../index.php");
-	}
+<?php 
 ?>
 
