@@ -8,7 +8,10 @@ include "../controller/validaciones/session/valSession.php";
 
 ?>
 
-	<body>
+	<head>
+	<script type="text/javascript" src="js/navegacion.js">
+	</script>
+</head>
 	<body style=" background: none repeat scroll 0 0 #1e1e1e;">
 	<div class="page-container">
     <?php include "menu_superior.php" ?>
