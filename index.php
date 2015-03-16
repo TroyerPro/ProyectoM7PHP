@@ -13,7 +13,7 @@
              <span class="icon-bar"></span>
              <span class="icon-bar"></span>
            </button>
-           <a class="navbar-brand" href="#">Proyecto PHP</a>
+           <a class="navbar-brand" href="#">XIII Industries</a>
     	</div>
     </nav>
 
@@ -32,8 +32,8 @@
                 <div class="row"><div class="col-sm-6"><div class="panel panel-default"><div class="panel-body">
                 
 				<form action="view/login.php" method="POST">
-					LOGIN
-					<button type="submit" class="btn btn-default"> GO GO GO </button>
+                 <div class="panel-heading"><a href="#" class="pull-right"></a> <h4>Bienvenido</h4></div>
+					Acceda con su usuario <button type="submit" class="btn btn-default"> AQUÍ </button>
 				</form>
 				</div></div></div></div>
 			</div>

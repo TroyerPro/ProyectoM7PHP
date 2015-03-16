@@ -1,51 +1,50 @@
 <?php
+session_start();
 include "../controller/addBoostrap.php";
 include "../controller/consultarGeneros.php";
 include "../controller/validaciones/session/valSession.php";
-session_start();
-
-if(!isset($_SESSION['user'])) {
-	header("Location:../index.php");
-} 
 
 
-if(cualquierUser($_SESSION['user'],$_SESSION['password'])) {
 ?>
+<html>
+	<head>
+	<meta charset="UTF-8">
+</head>
+	<body style=" background: none repeat scroll 0 0 #1e1e1e;">
+	<div class="page-container">
 
-<div class="col-xs-8 col-xs-offset-2">
+      <?php include "menu_superior.php" ?>
+    <div class="container-fluid">
+      <div class="row row-offcanvas row-offcanvas-left">
+      <?php include "menu_lateral.php" ?>
+        <!-- -->
+                <div class="col-xs-12 col-sm-9" data-spy="scroll" data-target="#sidebar-nav">
+                <div class="row"><div class="col-sm-6"><div class="panel panel-default"><div class="panel-body">
+
 <form action="../controller/insertarActor.php" method="post">
-	NIF:
-	<input type="text" name="nif">
+	<input class="form-control" placeholder="NIF" type="text" name="nif">
 	</input>
 	<br/>
-	Nombre:
-	<input type="text" name="nombre">
+	<input class="form-control" placeholder="Nombre" type="text" name="nombre">
 	</input>
 	<br/>
-	Apellidos:
-	<input type="text" name="apellidos">
+	<input class="form-control" placeholder="Apellidos" type="text" name="apellidos">
 	</input>
 	<br/>
-	Imagen:
-	<input type="text" name="imagen">
+	<input class="form-control" placeholder="Imagen" type="text" name="imagen">
 	</input>
 	<br/>
 	Principal:
-	<input type="checkbox" name="principal" >
+	<input  type="checkbox" name="principal" >
 	</input>
 	<br/>
 	<input type="submit" value="enviar"/>
 	<input type="reset" value="cancelar"/>
 </form>
 
-<?php
-include "../view/logout.php";
- } else {
-	//header("Location:login.php");
-	echo "error";
-	}
-
-?>
-
-<a href="../index.php">Inicio</a>
-</div>
+				</div></div></div></div>
+			</div>
+		</div>
+	</div></div>
+	</body>
+</html>

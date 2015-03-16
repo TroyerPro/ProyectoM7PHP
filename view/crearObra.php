@@ -24,46 +24,59 @@ include "../controller/validaciones/session/valSession.php";
                 <div class="row"><div class="col-sm-6"><div class="panel panel-default"><div class="panel-body">
 							<form action="../controller/insertarObra.php" method="post">
 <br/>
-	Nombre:
-	<input type="text" name="nombre">
+	<input  class="form-control" placeholder="Nombre" type="text" name="nombre">
 	</input>
 	<br/>
 	Genero:
-	<select name="genero">
+	<select class="form-control" name="genero">
 		<?php
 		imprimirGeneros();
 		?>
 	</select>
 	<br/>
-	//Pendiente validar fecha inicio > fecha hoy
-	Fecha incio
-	<input type="text" name="fechaInicio">
+	<input class="form-control" placeholder="Fecha incio" type="text" name="fechaInicio">
 	</input>
 	<br/>
-	//Pendiente validar fecha final > fecha inicio
-	Fecha final
-	<input type="text" name="fechaFinal">
+	<input class="form-control" placeholder="Fecha final" type="text" name="fechaFinal">
 	</input>
 	<br/>
-	Actores principales
-	<textarea name="actores_principales" COLS=40 ROWS=6/>
-	</textarea>
+	<div class="form-group">
+		<label>Actores principales</label><br>
+		<div style="padding-right:5%;">
+		<?php
+		for ($i = 0; $i<15; $i++){
+			echo "<input type='checkbox' value='Actor".($i+1)."'></input>Actor".($i+1)."";
+			if((($i+1)%5) == 0 && ($i+1) != 0) {
+				echo "</div><div  style='padding-right:5%;'>";
+			}
+		}
+		?>
+		</div>
+	</div>
+	<div class="form-group">
+		<label>Actores secundarios</label><br>
+		<label style="padding-right:5%;">
+		<?php
+		for ($i = 0; $i<15; $i++){
+			echo "<input type='checkbox' value='Actor".($i+1)."'></input>Actor".($i+1)."<br>";
+			if((($i+1)%5) == 0 && ($i+1) != 0) {
+				echo "</label><label  style='padding-right:5%;'>";
+			}
+		}
+		?>
+		</label>
+	</div>
 	<br/>
-	Actores secundarios
-	<textarea name="actores_secundarios" COLS=40 ROWS=6></textarea>
+	<textarea class="form-control" placeholder="Actores secundarios" name="actores_secundarios" COLS=40 ROWS=6></textarea>
 	<br/>
-	Director
-	<input type="text" name="director">
+	<input class="form-control" placeholder="Director" type="text" name="director">
 	</input>
 	<br/>
 	<input type="submit" value="enviar"/>
 	<input type="reset" value="cancelar"/>
 </form>
 
-<?php
-include "../view/logout.php";
-?>
-				
+	
 				</div></div></div></div>
 			</div>
 		</div>
@@ -76,6 +89,4 @@ include "../view/logout.php";
 
 <div class="col-xs-8 col-xs-offset-2">
 
-
-<a href="../index.php">Inicio</a>
 </div>

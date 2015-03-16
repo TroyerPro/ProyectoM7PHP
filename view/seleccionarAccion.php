@@ -12,17 +12,8 @@ include "../controller/validaciones/session/valSession.php";
 </head>
 	<body style=" background: none repeat scroll 0 0 #1e1e1e;">
 	<div class="page-container">
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-    	<div class="navbar-header">
-           <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target=".sidebar-nav">
-             <span class="icon-bar"></span>
-             <span class="icon-bar"></span>
-             <span class="icon-bar"></span>
-           </button>
-           <a class="navbar-brand" href="#">Proyecto PHP</a>
-    	</div>
-    </nav>
 
+      <?php include "menu_superior.php" ?>
     <div class="container-fluid">
       <div class="row row-offcanvas row-offcanvas-left">
       <?php include "menu_lateral.php" ?>
@@ -43,21 +34,15 @@ include "../controller/validaciones/session/valSession.php";
 						<option value="../view/verObra.php">Ver obra</option>
 						<option value="consultarObras.php">Mostrar TODAS las obras</option>
 						<option value="consultarActor.php">Mostrar Actores</option>
+						<option value="../../librerias/">GridView llibreria Adobe</option>
 					</select>
 					<button type="submit" class="btn btn-default"> GO GO GO
 					</button>
 				</form>
-				
-					<?php
-				include "logout.php";
-					?>
-				<a href="../index.php">Inicio</a>
+
 				</div></div></div></div>
 			</div>
 		</div>
 	</div></div>
 	</body>
 </html>
-<?php 
-?>
-
