@@ -10,7 +10,7 @@ $datosObra[3] = $_REQUEST['fechaInicio'];
 $datosObra[4] = $_REQUEST['fechaFinal'];
 $datosObra[5] = $_REQUEST['actores_principales'];
 $datosObra[6] = $_REQUEST['actores_secundarios'];
-$datosObra[7] = $_REQUEST['director'];
+$datosObra[7] = $_REQUEST['opcion'];
 
 $agencia = unserialize($_SESSION['agencia']);
 
@@ -22,4 +22,4 @@ foreach ($datosObra as $hola)
 	echo $hola . "<br/>";
 ?>
 
-<a href="../index.php">Inicio</a>
+<a href="../view/seleccionarAccion.php">Inicio</a>

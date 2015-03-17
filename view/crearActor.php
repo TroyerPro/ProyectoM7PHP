@@ -8,8 +8,10 @@ include "../controller/validaciones/session/valSession.php";
 ?>
 <html>
 	<head>
-	<meta charset="UTF-8">
-</head>
+		<meta charset="UTF-8">
+		<script type="text/javascript" src="js/navegacion.js">
+		</script>
+	</head>
 	<body style=" background: none repeat scroll 0 0 #1e1e1e;">
 	<div class="page-container">
 

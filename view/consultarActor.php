@@ -6,6 +6,21 @@ include "../controller/addBoostrap.php";
 
 
 ?>
+
+	<head>
+	<script type="text/javascript" src="js/navegacion.js">
+	</script>
+</head>
+	<body style=" background: none repeat scroll 0 0 #1e1e1e;">
+	<div class="page-container">
+    <?php include "menu_superior.php" ?>
+
+    <div class="container-fluid">
+      <div class="row row-offcanvas row-offcanvas-left">
+      <?php include "menu_lateral.php" ?>
+        <!-- -->
+                <div class="col-xs-12 col-sm-9" data-spy="scroll" data-target="#sidebar-nav">
+                <div class="row"><div class="col-sm-6"><div class="panel panel-default"><div class="panel-body">
 <form action="../controller/consultarActor.php" method="post">
 	<div name="arribaForm">
 		Introduce los datos del actor
@@ -17,7 +32,9 @@ include "../controller/addBoostrap.php";
 	<input type="reset" value="cancelar"/>
 </form>
 
-<?php
-include "../view/logout.php";
-?>
-<a href="../index.php">Inicio</a>
+				</div></div></div></div>
+			</div>
+		</div>
+	</div></div>
+	</body>
+</html>

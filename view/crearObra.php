@@ -10,9 +10,10 @@ include "../controller/validaciones/session/valSession.php";
 ?>
 
 	<head>
-	<script type="text/javascript" src="js/navegacion.js">
-	</script>
-</head>
+		<meta charset="UTF-8">
+		<script type="text/javascript" src="js/navegacion.js">
+		</script>
+	</head>
 	<body style=" background: none repeat scroll 0 0 #1e1e1e;">
 	<div class="page-container">
     <?php include "menu_superior.php" ?>
@@ -49,7 +50,7 @@ include "../controller/validaciones/session/valSession.php";
 			$agencia = unserialize($_SESSION['agencia']);
 			$actor=$agencia->getArrayActores();
 			for ($i = 0; $i<count($actor); $i++){
-				echo "<input type='checkbox' value='".($actor[$i]->getNIF())."'></input>".($actor[$i]->getNombre())."<br>";
+				echo "<input type='checkbox' name='actores_principales' value='".($actor[$i]->getNombre())."'></input>".($actor[$i]->getNombre())."<br>";
 				if((($i+1)%5) == 0 && ($i+1) != 0) {
 					echo "</label><label  style='padding-right:5%;'>";
 				}
@@ -61,7 +62,7 @@ include "../controller/validaciones/session/valSession.php";
 		<label style="padding-right:5%;">
 		<?php
 			for ($i = 0; $i<count($actor); $i++){
-				echo "<input type='checkbox' value='".($actor[$i]->getNIF())."'></input>".($actor[$i]->getNombre())."<br>";
+				echo "<input type='checkbox' name='actores_secundarios' value='".($actor[$i]->getNombre())."'></input>".($actor[$i]->getNombre())."<br>";
 				if((($i+1)%5) == 0 && ($i+1) != 0) {
 					echo "</label><label  style='padding-right:5%;'>";
 				}
@@ -74,11 +75,10 @@ include "../controller/validaciones/session/valSession.php";
 		<label>Director</label><br>
 		<select name="opcion" class="btn btn-default dropdown-toggle">
 			<?php
-			echo "gola";
 				$director=$agencia->getArrayDirectores();
 				echo count($director);
 				for ($i=0; $i <count($director) ; $i++) { 	
-					echo "<option value='".($director[$i]->getNIF())."''>".($director[$i]->getNombre())."</option>";
+					echo "<option name='director' value='".($director[$i]->getNombre())."''>".($director[$i]->getNombre())."</option>";
 				}	
 			?>			
 		</select>
@@ -95,11 +95,6 @@ include "../controller/validaciones/session/valSession.php";
 		</div>
 	</div></div>
 	</body>
-
-	
-
-
-
 <div class="col-xs-8 col-xs-offset-2">
 
 </div>
