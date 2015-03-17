@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 16-03-2015 a las 19:21:57
+-- Tiempo de generación: 17-03-2015 a las 13:20:10
 -- Versión del servidor: 5.6.20
 -- Versión de PHP: 5.5.15
 
@@ -58,6 +58,27 @@ INSERT INTO `actor` (`DNI`, `nombre`, `apellidos`, `img`, `principal`) VALUES
 ('asdsa', 'asdasd', 'asdasd', 'asdasd', 1),
 ('fssdf', 'sdfsdf', 'sdfsf', 'dssdff', 1),
 ('123', 'asdasd1', 'asdasd1', 'asdsad1', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `director`
+--
+
+CREATE TABLE IF NOT EXISTS `director` (
+  `DNI` char(8) NOT NULL,
+  `nombre` char(20) NOT NULL,
+  `apellidos` char(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `director`
+--
+
+INSERT INTO `director` (`DNI`, `nombre`, `apellidos`) VALUES
+('555', 'Adrià', 'Mondéjar'),
+('33333', 'Sergio', 'Gonzalez'),
+('22222', 'Javier', 'Bufo');
 
 -- --------------------------------------------------------
 

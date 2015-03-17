@@ -1,7 +1,7 @@
 <?php
 session_start();
-include "../controller/consultarGeneros.php";
 include "../controller/validaciones/session/valSession.php";
+include "../controller/consultarGeneros.php";
 include "../controller/addBoostrap.php";
 
 

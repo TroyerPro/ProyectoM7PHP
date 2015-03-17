@@ -26,7 +26,7 @@ class Agenciadb {
 		public function getDirectores() {		
 		$query="SELECT * FROM director";				
 		$con = new Db();
-		$result = $con->consulta($query, $GLOBALS['bd']);
+		$result = $con->consultarDirectores($query, $GLOBALS['bd']);
 		$con->close();
 
 		return $result;

@@ -110,6 +110,13 @@ class Agencia{
 		return $arrayObras;
 	}
 
+	//Adry
+	public function getArrayDirectores() {
+		$agenciaDb = new Agenciadb();
+		$arrayDirectores = $agenciaDb->getDirectores();
+		return $arrayDirectores;
+	}
+
 	public function insertarActor($NIF, $nombre, $apellidos,$img,$principal) {
 		/*
 		$message = 		$actor->getImg();

@@ -2,7 +2,8 @@
 session_start();
 require_once "../controller/addBoostrap.php";
 require_once "../controller/consultarGeneros.php";
-
+//Adry
+require_once  "../model/businessLayer/Class_Agencia.php";
 
 include "../controller/validaciones/session/valSession.php";
 
@@ -40,40 +41,52 @@ include "../controller/validaciones/session/valSession.php";
 	<input class="form-control" placeholder="Fecha final" type="text" name="fechaFinal">
 	</input>
 	<br/>
+	<!--   Adry   -->
 	<div class="form-group">
 		<label>Actores principales</label><br>
-		<div style="padding-right:5%;">
+		<label style="padding-right:5%;">
 		<?php
-		for ($i = 0; $i<15; $i++){
-			echo "<input type='checkbox' value='Actor".($i+1)."'></input>Actor".($i+1)."";
-			if((($i+1)%5) == 0 && ($i+1) != 0) {
-				echo "</div><div  style='padding-right:5%;'>";
+			$agencia = unserialize($_SESSION['agencia']);
+			$actor=$agencia->getArrayActores();
+			for ($i = 0; $i<count($actor); $i++){
+				echo "<input type='checkbox' value='".($actor[$i]->getNIF())."'></input>".($actor[$i]->getNombre())."<br>";
+				if((($i+1)%5) == 0 && ($i+1) != 0) {
+					echo "</label><label  style='padding-right:5%;'>";
+				}
 			}
-		}
 		?>
 		</div>
-	</div>
 	<div class="form-group">
 		<label>Actores secundarios</label><br>
 		<label style="padding-right:5%;">
 		<?php
-		for ($i = 0; $i<15; $i++){
-			echo "<input type='checkbox' value='Actor".($i+1)."'></input>Actor".($i+1)."<br>";
-			if((($i+1)%5) == 0 && ($i+1) != 0) {
-				echo "</label><label  style='padding-right:5%;'>";
+			for ($i = 0; $i<count($actor); $i++){
+				echo "<input type='checkbox' value='".($actor[$i]->getNIF())."'></input>".($actor[$i]->getNombre())."<br>";
+				if((($i+1)%5) == 0 && ($i+1) != 0) {
+					echo "</label><label  style='padding-right:5%;'>";
+				}
 			}
-		}
 		?>
 		</label>
 	</div>
-	<br/>
-	<textarea class="form-control" placeholder="Actores secundarios" name="actores_secundarios" COLS=40 ROWS=6></textarea>
-	<br/>
-	<input class="form-control" placeholder="Director" type="text" name="director">
-	</input>
-	<br/>
-	<input type="submit" value="enviar"/>
-	<input type="reset" value="cancelar"/>
+
+	<div class="form-group">
+		<label>Director</label><br>
+		<select name="opcion" class="btn btn-default dropdown-toggle">
+			<?php
+			echo "gola";
+				$director=$agencia->getArrayDirectores();
+				echo count($director);
+				for ($i=0; $i <count($director) ; $i++) { 	
+					echo "<option value='".($director[$i]->getNIF())."''>".($director[$i]->getNombre())."</option>";
+				}	
+			?>			
+		</select>
+		</div>
+	</div>
+	<!-- ##################################################### -->
+	<input type="submit"  class="btn btn-default" value="enviar"/>
+	<input type="reset" class="btn btn-default" value="cancelar"/>
 </form>
 
 	
