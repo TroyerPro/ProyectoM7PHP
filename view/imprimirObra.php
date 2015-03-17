@@ -1,8 +1,11 @@
+<?php include "addBoostrap.php"; ?>
 <html>
 	<head>
 		<meta charset="UTF-8">
 		<script type="text/javascript" src="../view/js/navegacion.js">
 		</script>
+    <link href="../view/css/styles.css" rel="stylesheet">
+<link href="../view/css/bootstrap.min.css" rel="stylesheet">
 	</head>
 	<body style=" background: none repeat scroll 0 0 #1e1e1e;">
 	<div class="page-container">
