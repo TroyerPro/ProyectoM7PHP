@@ -13,6 +13,22 @@ include "../controller/validaciones/session/valSession.php";
 		<meta charset="UTF-8">
 		<script type="text/javascript" src="js/navegacion.js">
 		</script>
+
+  <script language="JavaScript" type="text/JavaScript" src = "js/JSfuncions.js"></script>
+    <!-- calendar stylesheet -->
+  <link rel="stylesheet" type="text/css" media="all" href="js/jscalendar/calendar-win2k-cold-1.css" title="win2k-cold-1" />
+
+  <!-- main calendar program -->
+  <script type="text/javascript" src="js/jscalendar/calendar.js"></script>
+
+  <!-- language for the calendar -->
+  <script type="text/javascript" src="js/jscalendar/lang/calendar-es.js"></script>
+
+  <!-- the following script defines the Calendar.setup helper function, which makes
+       adding a calendar a matter of 1 or 2 lines of code. -->
+  <script type="text/javascript" src="js/jscalendar/calendar-setup.js"></script> 
+
+
 	</head>
 	<body style=" background: none repeat scroll 0 0 #1e1e1e;">
 	<div class="page-container">
@@ -32,15 +48,21 @@ include "../controller/validaciones/session/valSession.php";
 	Genero:
 	<select class="form-control" name="genero">
 		<?php
-		imprimirGeneros();
+		$agencia = unserialize($_SESSION['agencia']);
+		imprimirGeneros($agencia->getGeneros());
 		?>
 	</select>
 	<br/>
-	<input class="form-control" placeholder="Fecha incio" type="text" name="fechaInicio">
-	</input>
+	<p>Fecha de inicio (dd/mm/aaaa) 
+				<input type="text" name="data" id="data1"> <button type="reset" id="boto1">...</button>
+				<br>
+			    </p>
 	<br/>
-	<input class="form-control" placeholder="Fecha final" type="text" name="fechaFinal">
-	</input>
+	<p>Fecha de final (dd/mm/aaaa) 
+				<input type="text" name="data" id="data2"> <button type="reset" id="boto2">...</button>
+				<br>
+			    </p>
+	<br/>
 	<br/>
 	<!--   Adry   -->
 	<div class="form-group">
@@ -98,3 +120,22 @@ include "../controller/validaciones/session/valSession.php";
 <div class="col-xs-8 col-xs-offset-2">
 
 </div>
+
+<script type="text/javascript">
+    Calendar.setup({
+        inputField     :    "data1",      // id of the input field
+        ifFormat       :    "%d-%m-%Y",   // format of the input field
+        showsTime      :    false,         // will display a time selector
+        button         :    "boto1",      // trigger for the calendar (button ID)
+        singleClick    :    false,        // double-click mode
+        step           :    1             // show all years in drop-down boxes (instead of every other year as default)
+    });
+        Calendar.setup({
+        inputField     :    "data2",      // id of the input field
+        ifFormat       :    "%d-%m-%Y",   // format of the input field
+        showsTime      :    false,         // will display a time selector
+        button         :    "boto2",      // trigger for the calendar (button ID)
+        singleClick    :    false,        // double-click mode
+        step           :    1             // show all years in drop-down boxes (instead of every other year as default)
+    });
+</script> 

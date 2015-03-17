@@ -13,6 +13,7 @@ class Agencia{
 	private $actor;
 	private $director;
 	private $users;
+	private $generos;
 
 	public function __construct($nombre, $direccion,$telefono) {
 		$this->nombre=$nombre;
@@ -22,6 +23,7 @@ class Agencia{
 		$this->actor = array();
 		$this->director = array();
 		$this->users = array();
+		$this->generos = ["Miedo","Aventura","Comedia","Suspense"];
 	}
 	
 	public function getNombre(){
@@ -31,6 +33,15 @@ class Agencia{
 	public function setNombre($nombre){
 		$this->nombre = $nombre;
 	}
+
+	public function getGeneros(){
+		return $this->generos;
+	}
+
+	public function setGeneros($generos){
+		$this->generos = $generos;
+	}
+
 
 	public function getUsers(){
 		return $this->users;
