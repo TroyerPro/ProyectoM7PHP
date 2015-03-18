@@ -15,6 +15,7 @@ include "../controller/validaciones/session/valSession.php";
 		</script>
 
   <script language="JavaScript" type="text/JavaScript" src = "js/JSfuncions.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src = "js/jquery-1.11.2.min.js"></script>
     <!-- calendar stylesheet -->
   <link rel="stylesheet" type="text/css" media="all" href="js/jscalendar/calendar-win2k-cold-1.css" title="win2k-cold-1" />
 
@@ -54,12 +55,12 @@ include "../controller/validaciones/session/valSession.php";
 	</select>
 	<br/>
 	<p>Fecha de inicio (dd/mm/aaaa) 
-				<input type="text" name="data" id="data1"> <button type="reset" id="boto1">...</button>
+				<input type="text" name="data1" id="data1"> <button type="reset" id="boto1">...</button>
 				<br>
 			    </p>
 	<br/>
 	<p>Fecha de final (dd/mm/aaaa) 
-				<input type="text" name="data" id="data2"> <button type="reset" id="boto2">...</button>
+				<input type="text" name="data2" id="data2"> <button type="reset" id="boto2">...</button>
 				<br>
 			    </p>
 	<br/>
@@ -72,7 +73,7 @@ include "../controller/validaciones/session/valSession.php";
 			$agencia = unserialize($_SESSION['agencia']);
 			$actor=$agencia->getArrayActores();
 			for ($i = 0; $i<count($actor); $i++){
-				echo "<input type='checkbox' name='actores_principales' value='".($actor[$i]->getNombre())."'></input>".($actor[$i]->getNombre())."<br>";
+				echo "<input type='checkbox' name='actores_principales[". $i ."]' value='".($actor[$i]->getNombre())."'></input>".($actor[$i]->getNombre())."<br>";
 				if((($i+1)%5) == 0 && ($i+1) != 0) {
 					echo "</label><label  style='padding-right:5%;'>";
 				}
@@ -84,7 +85,7 @@ include "../controller/validaciones/session/valSession.php";
 		<label style="padding-right:5%;">
 		<?php
 			for ($i = 0; $i<count($actor); $i++){
-				echo "<input type='checkbox' name='actores_secundarios' value='".($actor[$i]->getNombre())."'></input>".($actor[$i]->getNombre())."<br>";
+				echo "<input type='checkbox' name='actores_secundarios[". $i ."]' value='".($actor[$i]->getNombre())."'></input>".($actor[$i]->getNombre())."<br>";
 				if((($i+1)%5) == 0 && ($i+1) != 0) {
 					echo "</label><label  style='padding-right:5%;'>";
 				}
@@ -95,6 +96,7 @@ include "../controller/validaciones/session/valSession.php";
 
 	<div class="form-group">
 		<label>Director</label><br>
+
 		<select name="opcion" class="btn btn-default dropdown-toggle">
 			<?php
 				$director=$agencia->getArrayDirectores();
@@ -104,6 +106,7 @@ include "../controller/validaciones/session/valSession.php";
 				}	
 			?>			
 		</select>
+
 		</div>
 	</div>
 	<!-- ##################################################### -->
@@ -138,4 +141,8 @@ include "../controller/validaciones/session/valSession.php";
         singleClick    :    false,        // double-click mode
         step           :    1             // show all years in drop-down boxes (instead of every other year as default)
     });
+
+
+
+
 </script> 
