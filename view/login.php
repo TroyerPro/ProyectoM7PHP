@@ -4,6 +4,32 @@ require_once "../model/businessLayer/Class_Agencia.php";
 require_once "../model/businessLayer/Class_User.php";
 include "../controller/addBoostrap.php";
 
+include("captcha/simple-php-captcha.php");
+
+	$userC = "";
+	$passC = "";
+if (isset($_COOKIE['user'])) {
+	$userC = $_COOKIE['user'];
+}
+
+if (isset($_COOKIE['pass'])) {
+	$passC = $_COOKIE['pass'];
+}
+
+
+if (isset($_REQUEST['captcha'])) {
+	if ($_SESSION['captcha']['code']==$_REQUEST['captcha']) {
+		$captcha2=TRUE;
+	}else{
+		$_SESSION['captcha'] = simple_php_captcha();
+		$captcha2=FALSE;
+	}
+}else{
+	$_SESSION['captcha'] = simple_php_captcha();
+	$captcha2=FALSE;
+}
+if ($captcha2) {
+
 if(!isset($_SESSION['agencia'])){
 		$agencia = new Agencia("Pokelab","C/ Vallbona n127","93 014 014");
 		$_SESSION['agencia']=serialize($agencia);
@@ -16,16 +42,7 @@ if(!isset($_SESSION['agencia'])){
 if (isset($_SESSION['user'])) {
 	header("Location: seleccionarAccion.php");
 }
-$userC = "";
-$passC = "";
 
-if (isset($_COOKIE['user'])) {
-	$userC = $_COOKIE['user'];
-}
-
-if (isset($_COOKIE['pass'])) {
-	$passC = $_COOKIE['pass'];
-}
 
 if (isset($_COOKIE["user"]) && isset($_COOKIE["pass"])) {
 	$userLogin = new Usuario(($_COOKIE["user"]), $_COOKIE["pass"]);
@@ -46,7 +63,7 @@ if (isset($_REQUEST['user']) && isset($_REQUEST['password'])) {
 	if ($correcto) {
 
 		if (isset($_REQUEST['usersave'])) {
-			setcookie("user", $userLogin, time() + 360);
+			setcookie("user", $_REQUEST['user'], time() + 360);
 		} else {
 			if (isset($_COOKIE['user'])) {
 				setcookie("user", "", time() - 360);
@@ -69,7 +86,7 @@ if (isset($_REQUEST['user']) && isset($_REQUEST['password'])) {
 	}
 }
 
-
+}
 ?>
 
 <html>
@@ -115,6 +132,11 @@ if (isset($_REQUEST['user']) && isset($_REQUEST['password'])) {
 					<input type="checkbox" name="passave" value="1">
 					</input>
 					<br/>
+					<?php
+    					echo '<img src="' . $_SESSION['captcha']['image_src'] . '" />';
+    				?><br/>
+    				<input type="text" name="captcha"/>
+    				<br/>
 					<input type="submit" name="login" value="Login"/>
 				</form>
 				
