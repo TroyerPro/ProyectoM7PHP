@@ -1,6 +1,8 @@
 <?php
 session_start();
 
+require_once  "../model/businessLayer/Class_Agencia.php";
+
 $datosDirector;
 $datosDirector[0] = $_REQUEST['nif'];
 $datosDirector[1] = $_REQUEST['nombre'];
@@ -17,4 +19,4 @@ foreach ($datosDirector as $hola)
 ?>
 
 
-<a href="../index.php">Inicio</a>
+<a href="../view/seleccionarAccion.php">Inicio</a>

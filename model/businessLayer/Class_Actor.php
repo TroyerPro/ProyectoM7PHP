@@ -1,5 +1,5 @@
 <?php
-include "Class_Persona.php";
+include_once "Class_Persona.php";
 class Actor extends Persona{
 	
 	private $img;

@@ -27,7 +27,4 @@ foreach ($datosActor as $hola) {
 
 ?>
 
-
-
-
-<a href="../index.php">Inicio</a>
+<a href="../view/seleccionarAccion.php">Inicio</a>

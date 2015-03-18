@@ -1,9 +1,12 @@
 <?php
 require_once  "Class_Obra.php";
 require_once  "Class_Actor.php";
+require_once  "Class_Director.php";
 include  "../model/DAO/Class_Obradb.php";
 include  "../model/DAO/Class_Agenciadb.php";
 include  "../model/DAO/Class_Actordb.php";
+include  "../model/DAO/Class_Directordb.php";
+
 class Agencia{
 
 	private $nombre;
@@ -144,6 +147,8 @@ class Agencia{
 
 	public function insertarDirector($NIF, $nombre, $apellidos) {
 		$director = new Director($NIF,$nombre,$apellidos);
+		$directordb=new DirectorDb();
+		$directordb->inserir($director);
 
 	}
 
