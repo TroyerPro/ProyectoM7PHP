@@ -22,7 +22,7 @@ include "../controller/validaciones/session/valSession.php";
                 <div class="row"><div class="col-sm-6"><div class="panel panel-default"><div class="panel-body">
 
 				<form action="../controller/roads.php" method="POST">
-                 <div class="panel-heading"><a href="#" class="pull-right">View all</a> <h4>Selecciona una acción</h4></div>
+                 <div class="panel-heading"><a href="#" class="pull-right"></a> <h4>Selecciona una acción</h4></div>
 					<br/>
 					<select name="opcion" class="btn btn-default dropdown-toggle">
 						<option value="../view/crearObra.php"> Crear una obra nueva. </option>
@@ -36,7 +36,7 @@ include "../controller/validaciones/session/valSession.php";
 						<option value="consultarActor.php">Mostrar Actores</option>
 						<option value="../../librerias/">GridView llibreria Adobe</option>
 					</select>
-					<button type="submit" class="btn btn-default"> GO GO GO
+					<button type="submit" class="btn btn-default"> Adelante
 					</button>
 				</form>
 

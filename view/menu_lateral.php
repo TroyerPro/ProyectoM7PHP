@@ -7,7 +7,7 @@
               <?php $fit=basename($_SERVER['PHP_SELF']);
               ?>        
 
-              <li><a href="seleccionarAccion.php" onclick="return avisar('<?php echo $fit?>')"?>Home</a></li>
+              <li><a href="seleccionarAccion.php" onclick="return avisar('<?php echo $fit?>')"?>Inicio</a></li>
               <!--<li><a href="../controller/modificarActor.php" onclick="return avisar('<?php echo $fit?>')">Modificar actor</a></li>-->
               <li><a href="crearActor.php" onclick="return avisar('<?php echo $fit?>')">Nuevo actor</a></li>
               <li><a href="consultarActor.php" onclick="return avisar('<?php echo $fit?>')">Buscar actor</a></li>

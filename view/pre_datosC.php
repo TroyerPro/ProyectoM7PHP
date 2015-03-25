@@ -10,17 +10,17 @@
 	<body style=" background: none repeat scroll 0 0 #1e1e1e;">
 	<div class="page-container">
 
-         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-    	<div class="navbar-header">
-           <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target=".sidebar-nav">
-             <span class="icon-bar"></span>
-             <span class="icon-bar"></span>
-             <span class="icon-bar"></span>
-           </button>
-           <a class="navbar-brand" href="#">Proyecto PHP</a>
-   
-    	</div>
-    </nav>
+           <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      	<div class="navbar-header">
+             <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target=".sidebar-nav">
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+             </button>
+             <a class="navbar-brand" href="#">Proyecto PHP</a>
+     
+      	</div>
+      </nav>
     <div class="container-fluid">
       <div class="row row-offcanvas row-offcanvas-left">
               <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
