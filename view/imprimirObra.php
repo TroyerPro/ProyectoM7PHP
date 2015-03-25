@@ -1,6 +1,6 @@
 
 
-<table border="1" style="margin-top:2%;">
+<table class="table table-striped" border="1" style="margin-top:2%;">
 	<tr><td><b>ID Obra: </td> <td><?php echo $obra->getIDObra(); ?></td></tr>
 	<tr><td>Nombre obra: </td><td><?php echo $obra->getNombre(); ?></td>	</tr>
 	<tr><td>Genero: </td><td> <?php echo $obra->getGenero(); ?></td></tr>

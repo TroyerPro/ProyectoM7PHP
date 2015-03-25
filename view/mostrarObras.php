@@ -1,5 +1,5 @@
-<table border="1" style="margin-top:2%;">
-	<tr><td><b>ID Obra: </td> <td><?php echo $totes[$cont]->getIDObra(); ?></td></tr>
+<table class="table table-striped" border="1" style="margin-top:2%;">
+	<tr><td><b>ID Obra:</b> </td> <td><?php echo $totes[$cont]->getIDObra(); ?></td></tr>
 	<tr><td>Nombre obra: </td><td><?php echo $totes[$cont]->getNombre(); ?></td>	</tr>
 	<tr><td>Genero: </td><td> <?php echo $totes[$cont]->getGenero(); ?></td></tr>
 	<tr><td>Fecha inicio: </td><td> <?php echo $totes[$cont]->getFechaI(); ?> </td></tr>
