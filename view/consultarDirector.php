@@ -21,9 +21,9 @@ include "../controller/addBoostrap.php";
         <!-- -->
                 <div class="col-xs-12 col-sm-9" data-spy="scroll" data-target="#sidebar-nav">
                 <div class="row"><div class="col-sm-6"><div class="panel panel-default"><div class="panel-body">
-<form action="../controller/verActor.php" method="post">
+<form action="../controller/verDirector.php" method="post">
 	<div name="arribaForm">
-	Introduce los datos del actor
+	Introduce los datos del Director
 	</div>
 	NIF:
 	<input type="text" name="nif">

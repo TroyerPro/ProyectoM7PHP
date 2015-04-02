@@ -32,14 +32,16 @@
               <?php $fit=basename($_SERVER['PHP_SELF']);
               ?>        
 
-              <li><a href="../view/seleccionarAccion.php" onclick="return avisar('<?php echo $fit?>')"?>Home</a></li>
+              <li><a href="consultarObras.php" onclick="return avisar('<?php echo $fit?>')"?>Inicio</a></li>
               <!--<li><a href="../controller/modificarActor.php" onclick="return avisar('<?php echo $fit?>')">Modificar actor</a></li>-->
               <li><a href="../view/crearActor.php" onclick="return avisar('<?php echo $fit?>')">Nuevo actor</a></li>
+              <li><a href="consultarActor.php" onclick="return avisar('<?php echo $fit?>')">Ver Todos los actores</a></li>
               <li><a href="../view/consultarActor.php" onclick="return avisar('<?php echo $fit?>')">Buscar actor</a></li>
               <li><a href="../view/crearDirector.php" onclick="return avisar('<?php echo $fit?>')">Nuevo director</a></li>
-              <li><a href="#" onclick="return avisar('<?php echo $fit?>')">Buscar director</a></li>
+              <li><a href="consultarDirector.php" onclick="return avisar('<?php echo $fit?>')">Ver todos los directores</a></li>
+              <li><a href="../view/consultarDirector.php" onclick="return avisar('<?php echo $fit?>')">Buscar director</a></li>
               <li><a href="../view/crearObra.php" onclick="return avisar('<?php echo $fit?>')">Nueva obra</a></li>
-              <li><a href="consultarObras.php" onclick="return avisar('<?php echo $fit?>')">Ver todas las obras</a></li>
+              <!--<li><a href="consultarObras.php" onclick="return avisar('<?php echo $fit?>')">Ver todas las obras</a></li>-->
               <li><a href="../view/verObra.php" onclick="return avisar('<?php echo $fit?>')">Buscar obra</a></li>
               <li><a href="../view/logout.php" onclick="alert('Adios')">Logout</a></li> 
             </ul>

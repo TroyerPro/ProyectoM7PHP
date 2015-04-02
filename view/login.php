@@ -40,7 +40,7 @@ if(!isset($_SESSION['agencia'])){
 }
 
 if (isset($_SESSION['user'])) {
-	header("Location: seleccionarAccion.php");
+	header("Location: ../controller/consultarObras.php");
 }
 
 
@@ -78,7 +78,7 @@ if (isset($_REQUEST['user']) && isset($_REQUEST['password'])) {
 			}
 		}
 		$_SESSION['user'] = serialize($userLogin);
-		header("Location: seleccionarAccion.php");
+		header("Location: ../controller/consultarObras.php");
 	} else {
 		session_unset();
 		?><script type="text/javascript"> alert("Usuario o contraseña erróneo");</script><?php

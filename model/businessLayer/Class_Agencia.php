@@ -82,7 +82,24 @@ class Agencia{
 		return $this->obra;
 	}
 
-	public function getActor(){
+	public function getActor($nif){
+		foreach ($this->actor as $item) {
+			if($item->getNIF() == $nif) {
+				return  $item;
+			}
+		}
+		//return $this->actor;
+	}
+
+	public function getDirector($nif){
+		foreach ($this->director as $item) {
+			if($item->getNIF() == $nif) {
+				return  $item;
+			}
+		}
+	}
+
+	public function getActors(){
 		return $this->actor;
 	}
 
@@ -94,7 +111,7 @@ class Agencia{
 		return $this->actor=$actor;
 	}
 
-	public function getDirector(){
+	public function getDirectores(){
 		return $this->director;
 	}
 
@@ -106,7 +123,11 @@ class Agencia{
 		
 			$agencia = unserialize($_SESSION['agencia']);
 			$totes=$agencia->getArrayObras();
+			$totes2=$agencia->getArrayActores();
+			$totes3=$agencia->getArrayDirectores();
 			$agencia->setObras($totes);
+			$agencia->setPersona($totes2);
+			$agencia->setDirector($totes3);
 			$_SESSION['agencia']=serialize($agencia);
 
 	}

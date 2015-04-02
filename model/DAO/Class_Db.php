@@ -115,7 +115,7 @@ class Db implements interface_db{
 		$consulta = mysql_query($query, $con) or die('Error, query failed: '.$this->error());
 		$cont = 0;
 		while ($row=mysql_fetch_array($consulta)) {		
-			$arrayLlibres[$cont] = new Actor ($row["DNI"],$row["nombre"],$row["apellidos"]);
+			$arrayLlibres[$cont] = new Director ($row["DNI"],$row["nombre"],$row["apellidos"]);
 			$cont++;			
 		}
 		return $arrayLlibres;
