@@ -35,7 +35,7 @@
               <li><a href="consultarObras.php" onclick="return avisar('<?php echo $fit?>')"?>Inicio</a></li>
               <!--<li><a href="../controller/modificarActor.php" onclick="return avisar('<?php echo $fit?>')">Modificar actor</a></li>-->
               <li><a href="../view/crearActor.php" onclick="return avisar('<?php echo $fit?>')">Nuevo actor</a></li>
-              <li><a href="consultarActor.php" onclick="return avisar('<?php echo $fit?>')">Ver Todos los actores</a></li>
+              <li><a href="consultarActor.php" onclick="return avisar('<?php echo $fit?>')">Ver todos los actores</a></li>
               <li><a href="../view/consultarActor.php" onclick="return avisar('<?php echo $fit?>')">Buscar actor</a></li>
               <li><a href="../view/crearDirector.php" onclick="return avisar('<?php echo $fit?>')">Nuevo director</a></li>
               <li><a href="consultarDirector.php" onclick="return avisar('<?php echo $fit?>')">Ver todos los directores</a></li>

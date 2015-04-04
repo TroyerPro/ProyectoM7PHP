@@ -76,6 +76,8 @@ class Agencia{
 			}
 		}
 
+		return false;
+
 	}
 
 	public function getObras(){
@@ -88,6 +90,7 @@ class Agencia{
 				return  $item;
 			}
 		}
+		return false;
 		//return $this->actor;
 	}
 
@@ -97,6 +100,7 @@ class Agencia{
 				return  $item;
 			}
 		}
+		return false;
 	}
 
 	public function getActors(){

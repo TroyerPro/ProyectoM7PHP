@@ -8,6 +8,7 @@ include "../controller/addBoostrap.php";
 ?>
 
 	<head>
+				<meta charset="UTF-8">
 	<script type="text/javascript" src="js/navegacion.js">
 	</script>
 </head>

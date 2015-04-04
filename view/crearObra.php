@@ -65,33 +65,35 @@ include "../controller/validaciones/session/valSession.php";
 			    </p>
 	<br/>
 	<br/>
-	<!--   Adry   -->
 	<div class="form-group">
 		<label>Actores principales</label><br>
-		<label style="padding-right:5%;">
+		<div style="display:inline-flex; width:100%;">
+			<div style='display:inline;'>
 		<?php
 			$agencia = unserialize($_SESSION['agencia']);
 			$actor=$agencia->getArrayActores();
 			for ($i = 0; $i<count($actor); $i++){
-				echo "<input type='checkbox' name='actores_principales[". $i ."]' value='".($actor[$i]->getNombre())."'></input>".($actor[$i]->getNombre())."<br>";
+				echo "<input type='checkbox' name='actores_principales[". $i ."]' value='".($actor[$i]->getNombre())."'></input>".($actor[$i]->getNombre())."</br>";
 				if((($i+1)%5) == 0 && ($i+1) != 0) {
-					echo "</label><label  style='padding-right:5%;'>";
+					echo "</div></br><div  style='display:inline; margin-right:5%;'>";
 				}
 			}
 		?>
+	</div>
 		</div>
 	<div class="form-group">
 		<label>Actores secundarios</label><br>
-		<label style="padding-right:5%;">
+		<div style="display:inline-flex; width:100%;">
+						<div style='display:inline;'>
 		<?php
 			for ($i = 0; $i<count($actor); $i++){
 				echo "<input type='checkbox' name='actores_secundarios[". $i ."]' value='".($actor[$i]->getNombre())."'></input>".($actor[$i]->getNombre())."<br>";
 				if((($i+1)%5) == 0 && ($i+1) != 0) {
-					echo "</label><label  style='padding-right:5%;'>";
+					echo "</div></br><div  style='display:inline;margin-right:5%;'>";
 				}
 			}
 		?>
-		</label>
+		</div>
 	</div>
 
 	<div class="form-group">

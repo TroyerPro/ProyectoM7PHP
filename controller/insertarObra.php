@@ -2,6 +2,17 @@
 session_start();
 
 require_once  "../model/businessLayer/Class_Agencia.php";
+
+if($_REQUEST['genero'] == null || $_REQUEST['nombre'] == null || $_REQUEST['data1'] == null || $_REQUEST['data2'] == null || $_REQUEST['actores_principales'] == null || $_REQUEST['actores_secundarios'] == null || $_REQUEST['opcion'] == null) {
+?>
+<script type='text/javascript'>
+	alert('Todos los campos son obligatorios.');
+	window.location.href = "../view/crearObra.php";
+</script>
+<?php
+}
+
+
 $datosObra;
 
 $datosObra[1] = $_REQUEST['nombre'];
@@ -39,11 +50,13 @@ $agencia->insertarObra($datosObra[1],$datosObra[2] ,$newDate, $newDate2,$actores
 
 $_SESSION['agencia'] = serialize($agencia);
 
-echo "<h1> INSERTADO LOLOL de datos </h1>";
 
+	$obra= new Obra($datosObra[1],$datosObra[2] ,$newDate, $newDate2,$actoresPrincipales,$actoresSecundarios,$datosObra[7]);
 
-
+		include ("../view/pre_datosC.php");
+		include ("../view/imprimirObra.php");
+		include ("../view/post_datosC.php");
 ?>
 
+<script>alert("Obra creada");</script>
 
-<a href="../view/seleccionarAccion.php">Inicio</a>
