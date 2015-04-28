@@ -27,7 +27,7 @@ include "../controller/validaciones/session/valSession.php";
 
   <!-- the following script defines the Calendar.setup helper function, which makes
        adding a calendar a matter of 1 or 2 lines of code. -->
-  <script type="text/javascript" src="js/jscalendar/calendar-setup.js"></script> 
+  <script type="text/javascript" src="js/jscalendar/calendar-setup.js"></script>
 
 
 	</head>
@@ -54,12 +54,12 @@ include "../controller/validaciones/session/valSession.php";
 		?>
 	</select>
 	<br/>
-	<p>Fecha de inicio (dd/mm/aaaa) 
+	<p>Fecha de inicio (dd/mm/aaaa)
 				<input type="text" name="data1" id="data1"> <button type="reset" id="boto1">...</button>
 				<br>
 			    </p>
 	<br/>
-	<p>Fecha de final (dd/mm/aaaa) 
+	<p>Fecha de final (dd/mm/aaaa)
 				<input type="text" name="data2" id="data2"> <button type="reset" id="boto2">...</button>
 				<br>
 			    </p>
@@ -70,12 +70,16 @@ include "../controller/validaciones/session/valSession.php";
 		<div style="display:inline-flex; width:100%;">
 			<div style='display:inline;'>
 		<?php
+		$salto=0;
 			$agencia = unserialize($_SESSION['agencia']);
 			$actor=$agencia->getArrayActores();
 			for ($i = 0; $i<count($actor); $i++){
-				echo "<input type='checkbox' name='actores_principales[". $i ."]' value='".($actor[$i]->getNombre())."'></input>".($actor[$i]->getNombre())."</br>";
-				if((($i+1)%5) == 0 && ($i+1) != 0) {
-					echo "</div></br><div  style='display:inline; margin-right:5%;'>";
+				if ($actor[$i]->getPrincipal()==1) {
+					echo "<input type='checkbox' name='actores_principales[". $i ."]' value='".($actor[$i]->getNombre())."'></input>".($actor[$i]->getNombre())."</br>";
+					if((($salto+1)%5) == 0 && ($salto+1) != 0) {
+						echo "</div></br><div  style='display:inline; margin-right:5%;'>";
+					}
+					$salto+=1;
 				}
 			}
 		?>
@@ -86,10 +90,14 @@ include "../controller/validaciones/session/valSession.php";
 		<div style="display:inline-flex; width:100%;">
 						<div style='display:inline;'>
 		<?php
+		$salto=0;
 			for ($i = 0; $i<count($actor); $i++){
-				echo "<input type='checkbox' name='actores_secundarios[". $i ."]' value='".($actor[$i]->getNombre())."'></input>".($actor[$i]->getNombre())."<br>";
-				if((($i+1)%5) == 0 && ($i+1) != 0) {
-					echo "</div></br><div  style='display:inline;margin-right:5%;'>";
+				if ($actor[$i]->getPrincipal()==0) {
+					echo "<input type='checkbox' name='actores_principales[". $i ."]' value='".($actor[$i]->getNombre())."'></input>".($actor[$i]->getNombre())."</br>";
+					if((($salto+1)%5) == 0 && ($salto+1) != 0) {
+						echo "</div></br><div  style='display:inline; margin-right:5%;'>";
+					}
+					$salto+=1;
 				}
 			}
 		?>
@@ -103,10 +111,10 @@ include "../controller/validaciones/session/valSession.php";
 			<?php
 				$director=$agencia->getArrayDirectores();
 				echo count($director);
-				for ($i=0; $i <count($director) ; $i++) { 	
+				for ($i=0; $i <count($director) ; $i++) {
 					echo "<option name='director' value='".($director[$i]->getNombre())."''>".($director[$i]->getNombre())."</option>";
-				}	
-			?>			
+				}
+			?>
 		</select>
 
 		</div>
@@ -116,7 +124,7 @@ include "../controller/validaciones/session/valSession.php";
 	<input type="reset" class="btn btn-default" value="cancelar"/>
 </form>
 
-	
+
 				</div></div></div></div>
 			</div>
 		</div>
@@ -147,4 +155,4 @@ include "../controller/validaciones/session/valSession.php";
 
 
 
-</script> 
+</script>
